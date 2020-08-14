@@ -1,0 +1,178 @@
+﻿<!DOCTYPE html>
+<html style="height: 100%">
+<head>
+    <meta charset="utf-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>水泡泵压</title>
+    <script src="http://libs.baidu.com/jquery/1.9.1/jquery.min.js"></script>
+</head>
+<body style="height: 100%; margin: 0">
+    <div style="position:absolute; z-index:100; left:1100px; top:120px;font-size:110px"><a href="file:///C:/Users/Administrator/Desktop/zhibanyemian/航站楼一楼.html">包头机场候机楼水泡泵压折线图</a></div>
+    <div id="container" style="height: 80%;top:400px"></div>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts/dist/echarts.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts-gl/dist/echarts-gl.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts-stat/dist/ecStat.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts/dist/extension/dataTool.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts/map/js/china.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts/map/js/world.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts/dist/extension/bmap.min.js"></script>
+    <script type="text/javascript">
+        var d = new Date();
+        var year = d.getFullYear(); 
+        var month = d.getMonth() + 1; // 记得当前月是要+1的
+        var dt = d.getDate();
+        if (month >= 1 && month <= 9) {
+            month = "0" + month;
+        }
+        if (dt >= 0 && dt <= 9) {
+            dt = "0" + dt;
+        }
+        var today = year + "-" + month + "-" + dt;
+        var cs0 = 'getDayPressure';
+        var cs1 = today;
+        var cs2 = '34022175';
+        var data = {
+            data: JSON.stringify({
+                "methods": cs0,
+                "cs1": cs1,
+                "cs2": cs2
+            })
+        }
+
+        $.ajax({
+            url: "http://0125.net.cn:5000/api",
+            type: 'POST',
+            data: data,
+            success: function (msg) {
+                console.log(msg);
+                var val = [];
+                var zong0 = [];
+                $.each(msg.data, function (i, item) {
+                    val.push(item.measuretime + '');
+
+                });
+                console.log(val);
+                time = val.slice(-7);
+                console.log(time);
+                $.each(msg.data, function (i, item) {
+                    zong0.push(item.zong + '');
+
+                });
+                console.log(zong0);
+                zong = zong0.slice(-7);
+                console.log(zong);
+                function unique(arr) {
+                    return arr.filter(function (item, index, arr) {
+                        //当前元素，在原始数组中的第一个索引==当前索引值，否则返回当前元素
+                        return arr.indexOf(item, 0) === index;
+                    });
+                }
+                var dom = document.getElementById("container");
+                var myChart = echarts.init(dom);
+                var app = {};
+                option = null;
+                option = {
+                    title: {
+                        //text: '包头机场消防水压折线图',
+                        //textAlign:'center'
+                        text: '',
+                        //subtext: '在此测试',
+                        x: 'center',
+                        y: 'top',
+                        textAlign: 'left',
+                        textStyle: {
+                            //文字颜色
+                            //color: '#ccc',
+                            //字体风格,'normal','italic','oblique'
+                            //fontStyle: 'normal',
+                            //字体粗细 'normal','bold','bolder','lighter',100 | 200 | 300 | 400...
+                            //fontWeight: 'bold',
+                            //字体系列
+                            //fontFamily: 'sans-serif',
+                            fontSize: 100
+                        }
+                    },
+                    tooltip: {
+                        trigger: 'axis'
+                    },
+                    legend: {
+                        data: [ ],
+                        textStyle: {
+                            color: 'red',
+                            fontSize: 40
+                        }
+
+                    },
+                    grid: {
+                        left: '3%',
+                        right: '4%',
+                        bottom: '5%',
+                        containLabel: true
+                    },
+                    toolbox: {
+                        feature: {
+                            saveAsImage: {}
+                        }
+                    },
+                    xAxis: {
+                        type: 'category',
+                        boundaryGap: false,
+                        data: time,
+                        axisLabel: {
+                            show: true,
+                            textStyle: {
+                                color: '',  //更改坐标轴文字颜色
+                                fontSize: 30   //更改坐标轴文字大小
+                            }
+                        },
+                    },
+                    yAxis: {
+                        type: 'value',
+                        name: '压力值 Mpa',
+
+                        nameTextStyle: {
+                            fontSize:40
+                        },
+                        axisLabel: {
+                            textStyle: {
+                                formatter: '{value}ml',
+                                fontSize:30  //更改坐标轴文字大小
+                            }
+                        },
+                        min: 0,
+                        max: 0.5
+                    },
+                    series: [
+                        {
+                            name: '传感器1',
+                            type: 'line',
+                            stack: '总量',
+                            data: zong,
+                            itemStyle: {
+                                normal: {
+                                    lineStyle: {
+                                        width: 10// 0.1的线条是非常细的了
+                                    },
+                                    label: {
+                                        show: true
+                                    }
+                                }
+                            }
+                        }
+                    ]
+                };
+                ;
+                if (option && typeof option === "object") {
+                    myChart.setOption(option, true);
+                }
+            }
+        });
+
+
+
+    </script>
+
+
+</body>
+</html>
