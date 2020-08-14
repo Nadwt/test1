@@ -1,0 +1,688 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 TransitiONal//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="Content-Type" content="text/html, charset=utf-8,width=device-width, initial-scale=1.0" name="viewport" />
+    <title>test</title>
+    <script src="http://libs.baidu.com/jquery/1.9.1/jquery.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #fontzoom {
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .table {
+            text-align: center;
+        }
+
+            .table img {
+                width: auto;
+                height: 8%;
+            }
+
+            .table table {
+                font-size: 70px;
+                border-collapse: collapse;
+                width: 90%;
+                table-layout: fixed;
+                text-align: center;
+                line-height: 100px;
+                margin: 0 auto;
+            }
+
+                .table table tr {
+                    border: dashed 1px #a59e9e;
+                    border-left: none;
+                    border-right: none;
+                }
+    </style>
+    <script>
+        function $(id) {
+            return document.getElementById(id);
+        }
+        function autoResizepic() {
+            var bodywidth = $('fontzoom').style.width;
+            bodywidth = document.body.scrollWidth
+            var picTarget = $('fontzoom').getElementsByTagName('img');
+
+            if (picTarget.length > 0) {
+                for (var i = 0; i < picTarget.length; i++) {
+                    if (picTarget[i].width > bodywidth) { picTarget[i].width = bodywidth - 0.1; }
+                    if (picTarget[i].width < bodywidth) { picTarget[i].width = bodywidth - 0.1; }
+                }
+            }
+        }
+        window.onresize = autoResizepic;
+    </script>
+</head>
+<body style="overflow-y: hidden;" bgcolor="ffffff">
+    <div id="fontzoom">
+        <img id="img" src="https://s1.ax1x.com/2020/07/16/UDVRAO.png" />
+
+       </div>
+    <div id="fontzoom">
+        <div id="d17" style="position:absolute; z-index:100; left:3270px; top:710px;font-size:55px;color:green;font-weight:bold">3号廊桥喷淋</div>
+        <div id="d8" style="position:absolute; z-index:100; left:3230px; top:790px;font-size:55px;color:green;font-weight:bold"></div>
+        <div id="d18" style="position:absolute; z-index:100; left:150px; top:580px;font-size:55px;color:green;font-weight:bold">10号廊桥喷淋</div>
+        <div id="d9" style="position:absolute; z-index:100; left:130px; top:660px;font-size:55px;color:green;font-weight:bold"></div>
+        <div id="d16" style="position:absolute; z-index:100; left:650px; top:330px;font-size:55px;color:green;font-weight:bold">二楼消火栓</div>
+        <div id="d15" style="position:absolute; z-index:100; left:600px; top:410px;font-size:55px;color:green;font-weight:bold"></div>
+        <div id="d21" style="position:absolute; z-index:100; left:3020px; top:10px;font-size:55px;color:green;font-weight:bold"><img src="https://s1.ax1x.com/2020/07/29/ae0FsI.png" /></div>
+    </div>
+    </divstyle="position:absolute;>
+    <div>
+        <script>
+            autoResizepic();
+            var d = new Date();
+            var year = d.getFullYear();
+            var month = d.getMonth() + 1; // 记得当前月是要+1的
+            var dt = d.getDate();
+            if (month >= 1 && month <= 9) {
+                month = "0" + month;
+            }
+            if (dt >= 0 && dt <= 9) {
+                dt = "0" + dt;
+            }
+            var today = year + "-" + month + "-" + dt;
+            console.log(today);
+            var fangfa = new Array("getDayPressure", "getDayTemperature", "getDayHumidity")
+            var riqi = today;
+            var id = new Array("34022175", "34989437", "34022142", "34022126", "50837266", "50837282", "34989296", "34022134", "50836953", "34019841", "34019817")
+            var data0 = {
+                data: JSON.stringify({
+                    "methods": fangfa[0],
+                    "cs1": riqi,
+                    "cs2": id[0]
+                })
+            }
+            var data1 = {
+                data: JSON.stringify({
+                    "methods": fangfa[0],
+                    "cs1": riqi,
+                    "cs2": id[1]
+                })
+            }
+            var data2 = {
+                data: JSON.stringify({
+                    "methods": fangfa[0],
+                    "cs1": riqi,
+                    "cs2": id[2]
+                })
+            }
+            var data3 = {
+                data: JSON.stringify({
+                    "methods": fangfa[0],
+                    "cs1": riqi,
+                    "cs2": id[3]
+                })
+            }
+            var data4 = {
+                data: JSON.stringify({
+                    "methods": fangfa[0],
+                    "cs1": riqi,
+                    "cs2": id[4]
+                })
+            }
+            var data5 = {
+                data: JSON.stringify({
+                    "methods": fangfa[0],
+                    "cs1": riqi,
+                    "cs2": id[5]
+                })
+            }
+            var data6 = {
+                data: JSON.stringify({
+                    "methods": fangfa[0],
+                    "cs1": riqi,
+                    "cs2": id[6]
+                })
+            }
+            var data7 = {
+                data: JSON.stringify({
+                    "methods": fangfa[0],
+                    "cs1": riqi,
+                    "cs2": id[7]
+                })
+            }
+            var data8 = {
+                data: JSON.stringify({
+                    "methods": fangfa[0],
+                    "cs1": riqi,
+                    "cs2": id[8]
+                })
+            }
+            var data9 = {
+                data: JSON.stringify({
+                    "methods": fangfa[1],
+                    "cs1": riqi,
+                    "cs2": id[9]
+                })
+            }
+            var data10 = {
+                data: JSON.stringify({
+                    "methods": fangfa[2],
+                    "cs1": riqi,
+                    "cs2": id[10]
+                })
+            }
+
+            //水泡水压
+            jQuery.ajax({
+                url: "http://0125.net.cn:5000/api",
+                type: 'POST',
+                data: data0,
+                success: function (msg) {
+                    console.log(msg);
+                    // for (var p in msg.data) {
+                    //    var lo =[];
+                    //  return lo.push(msg.data[p].logicaddr);
+                    //   console.log(msg.data[p].logicaddr + " " +  msg.data[p].zong);
+                    // }
+                    //console.log(lo);
+                    //console.log(val);
+                    // msg.splice(msg.length - 7, msg.length - 1);
+                    //console.log(msg);
+                    var val = [];
+                    jQuery.each(msg.data, function (i, item) {
+                        val.push(item.zong + '');
+
+                    });
+                    console.log(val);
+                    //console.log(unique(val));
+                    val = val.slice(-1);
+                    console.log(val);
+                    // console.log(val)
+                    // msg.splice(msg.length - 7, msg.length - 1)
+                    // console.log(msg)
+                    var data1 = "水泡泵压:" + val + "Mpa";
+                    document.getElementById("d5").innerHTML = data1;
+                    if (val < 0.13) {
+                        var color = document.getElementById("d5");//颜色判断
+                        color.style.color = "red";//颜色判断
+                    }
+                }
+            });
+            //车库温度
+            jQuery.ajax({
+                url: "http://0125.net.cn:5000/api",
+                type: 'POST',
+                data: data9,
+                success: function (msg) {
+                    console.log(msg);
+                    // for (var p in msg.data) {
+                    //    var lo =[];
+                    //  return lo.push(msg.data[p].logicaddr);
+                    //   console.log(msg.data[p].logicaddr + " " +  msg.data[p].zong);
+                    // }
+                    //console.log(lo);
+                    //console.log(val);
+                    // msg.splice(msg.length - 7, msg.length - 1);
+                    //console.log(msg);
+                    var val = [];
+                    jQuery.each(msg.data, function (i, item) {
+                        val.push(item.temperature + '');
+
+                    });
+                    console.log(val);
+                    //console.log(unique(val));
+                    val = val.slice(-1);
+                    console.log(val);
+                    // console.log(val)
+                    // msg.splice(msg.length - 7, msg.length - 1)
+                    // console.log(msg)
+                    var wendu = "车库温度:" + val + "℃";
+                    document.getElementById("d3").innerHTML = wendu;
+                    if (val < 10) {
+                        var color = document.getElementById("d3");//颜色判断
+                        color.style.color = "red";//颜色判断
+                        alert("车库温度异常！");
+                    }
+                }
+            });
+            //车库湿度
+            jQuery.ajax({
+                url: "http://0125.net.cn:5000/api",
+                type: 'POST',
+                data: data10,
+                success: function (msg) {
+                    console.log(msg);
+                    // for (var p in msg.data) {
+                    //    var lo =[];
+                    //  return lo.push(msg.data[p].logicaddr);
+                    //   console.log(msg.data[p].logicaddr + " " +  msg.data[p].zong);
+                    // }
+                    //console.log(lo);
+                    //console.log(val);
+                    // msg.splice(msg.length - 7, msg.length - 1);
+                    //console.log(msg);
+                    var val = [];
+                    jQuery.each(msg.data, function (i, item) {
+                        val.push(item.wet + '');
+
+                    });
+                    console.log(val);
+                    //console.log(unique(val));
+                    val = val.slice(-1);
+                    console.log(val);
+
+                    // console.log(val)
+                    // msg.splice(msg.length - 7, msg.length - 1)
+                    // console.log(msg)
+
+                    var cheku = "车库湿度:" + val + "%";
+                    document.getElementById("d4").innerHTML = cheku;
+
+                }
+            });
+            //消防栓泵压
+            jQuery.ajax({
+                url: "http://0125.net.cn:5000/api",
+                type: 'POST',
+                data: data1,
+                success: function (msg) {
+                    console.log(msg);
+                    // for (var p in msg.data) {
+                    //    var lo =[];
+                    //  return lo.push(msg.data[p].logicaddr);
+                    //   console.log(msg.data[p].logicaddr + " " +  msg.data[p].zong);
+                    // }
+                    //console.log(lo);
+                    //console.log(val);
+                    // msg.splice(msg.length - 7, msg.length - 1);
+                    //console.log(msg);
+                    var val = [];
+                    jQuery.each(msg.data, function (i, item) {
+                        val.push(item.zong + '');
+
+                    });
+                    console.log(val);
+                    //console.log(unique(val));
+                    val = val.slice(-1);
+                    console.log(val);
+
+                    // console.log(val)
+                    // msg.splice(msg.length - 7, msg.length - 1)
+                    // console.log(msg)
+
+                    var data2 = "消防栓泵压:" + val + "Mpa";
+                    document.getElementById("d6").innerHTML = data2;
+                    if (val < 0.13) {
+                        var color = document.getElementById("d6");//颜色判断
+                        color.style.color = "red";//颜色判断
+                        alert("消防栓泵压异常！");
+                    }
+                }
+            });
+            //喷淋泵压
+            jQuery.ajax({
+                url: "http://0125.net.cn:5000/api",
+                type: 'POST',
+                data: data2,
+                success: function (msg) {
+                    console.log(msg);
+                    // for (var p in msg.data) {
+                    //    var lo =[];
+                    //  return lo.push(msg.data[p].logicaddr);
+                    //   console.log(msg.data[p].logicaddr + " " +  msg.data[p].zong);
+                    // }
+                    //console.log(lo);
+                    //console.log(val);
+                    // msg.splice(msg.length - 7, msg.length - 1);
+                    //console.log(msg);
+                    var val = [];
+                    jQuery.each(msg.data, function (i, item) {
+                        val.push(item.zong + '');
+
+                    });
+                    console.log(val);
+                    //console.log(unique(val));
+                    val = val.slice(-1);
+                    console.log(val);
+
+                    // console.log(val)
+                    // msg.splice(msg.length - 7, msg.length - 1)
+                    // console.log(msg)
+
+
+                    var data3 = "喷淋泵压:" + val + "Mpa";
+                    document.getElementById("d7").innerHTML = data3;
+                    if (val < 0.13) {
+                        var color = document.getElementById("d7");//颜色判断
+                        color.style.color = "red";//颜色判断
+                        alert("喷淋泵压异常！");
+                    }
+
+                }
+            });
+            //3号廊桥压力
+            jQuery.ajax({
+                url: "http://0125.net.cn:5000/api",
+                type: 'POST',
+                data: data3,
+                success: function (msg) {
+                    console.log(msg);
+                    // for (var p in msg.data) {
+                    //    var lo =[];
+                    //  return lo.push(msg.data[p].logicaddr);
+                    //   console.log(msg.data[p].logicaddr + " " +  msg.data[p].zong);
+                    // }
+                    //console.log(lo);
+                    //console.log(val);
+                    // msg.splice(msg.length - 7, msg.length - 1);
+                    //console.log(msg);
+                    var val = [];
+                    jQuery.each(msg.data, function (i, item) {
+                        val.push(item.zong + '');
+
+                    });
+                    console.log(val);
+                    //console.log(unique(val));
+                    val = val.slice(-1);
+                    console.log(val);
+
+                    // console.log(val)
+                    // msg.splice(msg.length - 7, msg.length - 1)
+                    // console.log(msg)
+
+
+                    var data4 = "压力：" + val + "Mpa";
+                    document.getElementById("d8").innerHTML = data4;
+                    document.getElementById("d8").onclick = function () {
+                        window.open("file:///C:/Users/Administrator/Desktop/zhibanyemian/候机楼三号廊桥喷淋压力折线图.html");
+                    };
+                    document.getElementById("d17").onclick = function () {
+                        window.open("file:///C:/Users/Administrator/Desktop/zhibanyemian/候机楼三号廊桥喷淋压力折线图.html");
+                    };
+                    if (val < 0.13) {
+                        var color = document.getElementById("d8");
+                        var color1 = document.getElementById("d17");//颜色判断
+                        color.style.color = "red";
+                        color1.style.color = "red";//颜色判断
+                        alert("3号廊桥喷淋压力异常！");
+                    }
+
+                }
+            });
+            //10号廊桥
+            jQuery.ajax({
+                url: "http://0125.net.cn:5000/api",
+                type: 'POST',
+                data: data4,
+                success: function (msg) {
+                    console.log(msg);
+                    // for (var p in msg.data) {
+                    //    var lo =[];
+                    //  return lo.push(msg.data[p].logicaddr);
+                    //   console.log(msg.data[p].logicaddr + " " +  msg.data[p].zong);
+                    // }
+                    //console.log(lo);
+                    //console.log(val);
+                    // msg.splice(msg.length - 7, msg.length - 1);
+                    //console.log(msg);
+                    var val = [];
+                    jQuery.each(msg.data, function (i, item) {
+                        val.push(item.zong + '');
+
+                    });
+                    console.log(val);
+                    //console.log(unique(val));
+                    val = val.slice(-1);
+                    console.log(val);
+
+                    // console.log(val)
+                    // msg.splice(msg.length - 7, msg.length - 1)
+                    // console.log(msg)
+
+                    var data5 = "压力：" + val + "Mpa";
+                    document.getElementById("d9").innerHTML = data5;
+                    document.getElementById("d9").onclick = function () {
+                        window.open("file:///C:/Users/Administrator/Desktop/zhibanyemian/候机楼十号廊桥喷淋压力折线图.html");
+                    };
+                    document.getElementById("d18").onclick = function () {
+                        window.open("file:///C:/Users/Administrator/Desktop/zhibanyemian/候机楼十号廊桥喷淋压力折线图.html");
+                    };
+                    if (val < 0.13) {
+                        var color = document.getElementById("d9");
+                        var color1 = document.getElementById("d18");//颜色判断
+                        color.style.color = "red";//颜色判断
+                        color1.style.color = "red";
+                        alert("10号廊桥喷淋水压异常！");
+                    }
+
+                }
+            });
+            //风向
+            jQuery.ajax({
+
+                type: "GET",
+
+                url: "http://wthrcdn.etouch.cn/weather_mini?citykey=101080201",
+
+                success: function (res) {
+
+                    console.log(res)
+                    console.log(res);
+                    var o1 = new Array();
+                    o1 = res.indexOf('fengxiang');
+                    console.log(o1);
+
+                    //console.log(lo);
+                    var stringResult = res.split(',');
+                    console.log(stringResult);
+                    console.log(stringResult[11]);
+                    var o2 = stringResult[11];
+                    console.log(o2[1]);
+                    var a = o2;
+
+                    console.log(a[1]);
+                    var b = "";
+                    for (var i = 0; i < a.length; i++) {
+                        if (a.charCodeAt(i) > 256 && a[i] != " ") {
+                            b += a[i];
+                        } else {
+                            continue;
+                        }
+                    }
+                    console.log(b);  //"你们还是
+                    //console.log(res[o1+12]);
+                    var val = [];
+                    var fengxiang = "风向:" + b;
+                    document.getElementById("d11").innerHTML = fengxiang;
+                    //$.each(res.data, function (i, item) {
+                    // val.push(item.logicaddr + '');
+
+                    //);
+                    // console.log(unique(val))
+
+                }, error: function (error) {
+
+
+
+                }
+
+            });
+            //清洁间喷淋
+            jQuery.ajax({
+                url: "http://0125.net.cn:5000/api",
+                type: 'POST',
+                data: data6,
+                success: function (msg) {
+                    console.log(msg);
+                    var val = [];
+                    jQuery.each(msg.data, function (i, item) {
+                        val.push(item.zong + '');
+                    });
+                    console.log(val);
+                    val = val.slice(-1);
+                    console.log(val);
+                    var data6 = "清洁间喷淋压力:" + val + "Mpa";
+                    document.getElementById("d12").innerHTML = data6;
+                    if (val < 0.13) {
+                        var color = document.getElementById("d9");//颜色判断
+                        color.style.color = "red";//颜色判断
+                        alert("清洁间喷淋压力异常！");
+                    }
+                }
+            });
+            //贵宾喷淋压
+            jQuery.ajax({
+                url: "http://0125.net.cn:5000/api",
+                type: 'POST',
+                data: data7,
+                success: function (msg) {
+                    console.log(msg);
+                    // for (var p in msg.data) {
+                    //    var lo =[];
+                    //  return lo.push(msg.data[p].logicaddr);
+                    //   console.log(msg.data[p].logicaddr + " " +  msg.data[p].zong);
+                    // }
+                    //console.log(lo);
+                    //console.log(val);
+                    // msg.splice(msg.length - 7, msg.length - 1);
+                    //console.log(msg);
+                    var val = [];
+                    jQuery.each(msg.data, function (i, item) {
+                        val.push(item.zong + '');
+
+                    });
+                    console.log(val);
+                    //console.log(unique(val));
+                    val = val.slice(-1);
+                    console.log(val);
+
+                    // console.log(val)
+                    // msg.splice(msg.length - 7, msg.length - 1)
+                    // console.log(msg)
+
+
+                    var data3 = "贵宾喷淋泵压力:" + val + "Mpa";
+                    document.getElementById("d13").innerHTML = data3;
+                    if (val < 0.13) {
+                        var color = document.getElementById("d13");//颜色判断
+                        color.style.color = "red";//颜色判断
+                        alert("贵宾喷淋泵压力异常！");
+                    }
+
+                }
+            });
+            //1层无障碍喷淋压
+            jQuery.ajax({
+                url: "http://0125.net.cn:5000/api",
+                type: 'POST',
+                data: data5,
+                success: function (msg) {
+                    console.log(msg);
+                    // for (var p in msg.data) {
+                    //    var lo =[];
+                    //  return lo.push(msg.data[p].logicaddr);
+                    //   console.log(msg.data[p].logicaddr + " " +  msg.data[p].zong);
+                    // }
+                    //console.log(lo);
+                    //console.log(val);
+                    // msg.splice(msg.length - 7, msg.length - 1);
+                    //console.log(msg);
+                    var val = [];
+                    jQuery.each(msg.data, function (i, item) {
+                        val.push(item.zong + '');
+
+                    });
+                    console.log(val);
+                    //console.log(unique(val));
+                    val = val.slice(-1);
+                    console.log(val);
+
+                    // console.log(val)
+                    // msg.splice(msg.length - 7, msg.length - 1)
+                    // console.log(msg)
+
+
+                    var data3 = "一层无障碍卫生间喷淋压力:" + val + "Mpa";
+                    document.getElementById("d14").innerHTML = data3;
+                    if (val < 0.13) {
+                        var color = document.getElementById("d14");//颜色判断
+                        color.style.color = "red";//颜色判断
+                        alert("一层无障碍卫生间喷淋压力异常！");
+                    }
+
+                }
+            });
+            //2层消防栓
+            jQuery.ajax({
+                url: "http://0125.net.cn:5000/api",
+                type: 'POST',
+                data: data8,
+                success: function (msg) {
+                    console.log(msg);
+                    // for (var p in msg.data) {
+                    //    var lo =[];
+                    //  return lo.push(msg.data[p].logicaddr);
+                    //   console.log(msg.data[p].logicaddr + " " +  msg.data[p].zong);
+                    // }
+                    //console.log(lo);
+                    //console.log(val);
+                    // msg.splice(msg.length - 7, msg.length - 1);
+                    //console.log(msg);
+                    var val = [];
+                    jQuery.each(msg.data, function (i, item) {
+                        val.push(item.zong + '');
+
+                    });
+                    console.log(val);
+                    //console.log(unique(val));
+                    val = val.slice(-1);
+                    console.log(val);
+
+                    // console.log(val)
+                    // msg.splice(msg.length - 7, msg.length - 1)
+                    // console.log(msg)
+
+
+                    var data3 = "压力:" + val + "Mpa";
+                    document.getElementById("d15").innerHTML = data3;
+                    document.getElementById("d15").onclick = function () {
+                        window.open("file:///C:/Users/Administrator/Desktop/zhibanyemian/候机楼消防栓压力折线图.html");
+                    };
+                    document.getElementById("d16").onclick = function () {
+                        window.open("file:///C:/Users/Administrator/Desktop/zhibanyemian/候机楼消防栓压力折线图.html");
+                    };
+                    document.getElementById("d21").onclick = function () {
+                        window.open("file:///C:/Users/Administrator/Desktop/zhibanyemian/jiankongxinxizhongxi.html");
+                    };
+                    if (val < 0.13) {
+                        var color1 = document.getElementById("d15");
+                        var color2 = document.getElementById("d16");//颜色判断
+                        color1.style.color = "red";//颜色判断
+                        color2.style.color = "red";
+                        alert("二层消防栓压力异常！");
+                    }
+
+                }
+            });
+
+
+            function unique(arr) {
+                return arr.filter(function (item, index, arr) {
+                    //当前元素，在原始数组中的第一个索引==当前索引值，否则返回当前元素
+                    return arr.indexOf(item, 0) === index;
+                });
+            }
+            var d = new Date();
+            var year = d.getFullYear();
+            var month = d.getMonth() + 1; // 记得当前月是要+1的
+            var dt = d.getDate();
+            var today = year + "年" + month + "月" + dt + "日";
+            console.log(today);
+            document.getElementById("d1").innerHTML = today;
+            var xingqi = "星期" + "日一二三四五六".charAt(new Date().getDay());
+            console.log(xingqi);
+            document.getElementById("d2").innerHTML = xingqi;
+        </script>
+    </div>
+    </div>
+</body>
+</html>
