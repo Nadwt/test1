@@ -116,7 +116,7 @@
                      console.log(today);
                      var fangfa = new Array("getDayPressure", "getDayTemperature", "getDayHumidity")
                      var riqi = today;
-                     var id = new Array("34022175", "34989437", "34022142", "34022126", "50837266", "50837282", "34989296", "34022134", "50836953", "34019841", "34019817")
+                     var id = new Array("34022175", "34989437", "34022142", "34022126", "50837266", "50837282", "34989296", "34022134", "50836953", "34019841", "34019817","34019478")
                      var data0 = {
                          data: JSON.stringify({
                              "methods": fangfa[0],
@@ -194,6 +194,21 @@
                              "cs2": id[10]
                          })
                      }
+                     var data11 = {
+                         data: JSON.stringify({
+                             "methods": fangfa[1],
+                             "cs1": riqi,
+                             "cs2": id[11]
+                         })
+                     }
+                     var data12 = {
+                         data: JSON.stringify({
+                             "methods": fangfa[2],
+                             "cs1": riqi,
+                             "cs2": id[11]
+                         })
+                     }
+
                    
                      //水泡水压
                      jQuery.ajax({
@@ -238,7 +253,8 @@
                      jQuery.ajax({
                          url: "http://0125.net.cn:5000/api",
                          type: 'POST',
-                         data: data9,
+                         //data: data9,
+                         data: data11,
                          success: function (msg) {
                              console.log(msg);
                              // for (var p in msg.data) {
@@ -279,7 +295,8 @@
                      jQuery.ajax({
                          url: "http://0125.net.cn:5000/api",
                          type: 'POST',
-                         data: data10,
+                         //data: data10,
+                         data: data12,
                          success: function (msg) {
                              console.log(msg);
                              // for (var p in msg.data) {
