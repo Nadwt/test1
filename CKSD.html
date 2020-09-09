@@ -8,7 +8,7 @@
     <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
 </head>
 <body style="height: 100%; margin: 0">
-    <div style="position:absolute; z-index:100; left:1200px; top:120px;font-size:110px"><a href="http://btjczhxf.top/CK">包头机场消防楼车库温度折线图</a></div>
+    <div style="position:absolute; z-index:100; left:1200px; top:120px;font-size:110px"><a href="http://btjczhxf.top/CK">包头机场消防楼车库湿度折线图</a></div>
     <div id="container" style="height: 80%;top:400px"></div>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts/dist/echarts.min.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts-gl/dist/echarts-gl.min.js"></script>
@@ -29,9 +29,9 @@
             dt = "0" + dt;
         }
         var today = year + "-" + month + "-" + dt;
-        var cs0 = 'getDayTemperature';
+        var cs0 = 'getDayHumidity';
         var cs1 = today;
-        var cs2 = '34019841';
+        var cs2 = '34019817';
         var data = {
             data: JSON.stringify({
                 "methods": cs0,
@@ -56,7 +56,7 @@
                 time = val.slice(-7);
                 console.log(time);
                 $.each(msg.data, function (i, item) {
-                    zong0.push(item.temperature + '');
+                    zong0.push(item.wet + '');
 
                 });
                 console.log(zong0);
@@ -129,7 +129,7 @@
                     },
                     yAxis: {
                         type: 'value',
-                        name: '温度 ℃',
+                        name: '湿度 %',
 
                         nameTextStyle: {
                             fontSize:40
@@ -140,8 +140,8 @@
                                 fontSize:30  //更改坐标轴文字大小
                             }
                         },
-                        min: 30,
-                        max:20
+                        min: 0,
+                        max:100
                     },
                     series: [
                         {
